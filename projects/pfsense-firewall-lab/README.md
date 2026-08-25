@@ -28,7 +28,20 @@ Build and configure a virtual network using pfSense to practice firewall adminis
 In this lab, I used pfSense as the firewall/router between systems in a virtual network.
 
 The goal was to understand how traffic moves between systems and how firewall and NAT rules control access to services.
+## Network Diagram
 
+```mermaid
+flowchart LR
+    Internet((Internet))
+    FW[pfSense Firewall / Router]
+    LAN[Private Lab Network]
+    WIN[Windows VM]
+    LINUX[Linux VM]
+
+    Internet --> FW
+    FW --> LAN
+    LAN --> WIN
+    LAN --> LINUX
 ## Troubleshooting Process
 
 When connectivity did not work as expected, I checked:
